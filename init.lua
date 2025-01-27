@@ -76,6 +76,14 @@ require('lazy').setup({
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
 
+  -- add closing on opening
+  {
+  "windwp/nvim-autopairs",
+  config = function()
+    require("nvim-autopairs").setup {}
+  end,
+  },
+
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
   {
@@ -191,10 +199,13 @@ require('lazy').setup({
 
   {
     -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
+    -- 'navarasu/onedark.nvim',
+    -- 'sainnhe/gruvbox-material',
+    "ellisonleao/gruvbox.nvim",
+
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'onedark'
+      vim.cmd.colorscheme( "gruvbox" )
     end,
   },
 
